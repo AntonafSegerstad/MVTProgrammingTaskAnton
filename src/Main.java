@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Logic logic = new Logic();
+        Analyzer process = new Analyzer();
         boolean isON = true;
 
 
@@ -15,20 +15,20 @@ public class Main {
         while (isON) {
             String input = scanner.nextLine();
 
-            if (logic.checkIfStop(input)) {
+            if (process.checkIfStop(input)) {
                 isON = false;
             } else {
-                logic.process(input);
+                process.process(input);
             }
         }
 
         System.out.println();
-        logic.printAll();
+        process.printAll();
         System.out.println();
-        System.out.println("Word counter: " + logic.getWordCounter());
-        System.out.println("Row counter: " + logic.getRowCounter());
-        System.out.println("Character counter: " + logic.getCharCounter());
-        System.out.println("Longest word: " + logic.getLongestWord());
+        System.out.println("Word counter: " + process.getWordCounter());
+        System.out.println("Row counter: " + process.getRowCounter());
+        System.out.println("Character counter: " + process.getCharCounter());
+        System.out.println("Longest word: " + process.getLongestWord());
 
     }
 }

@@ -4,8 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class TestLogic {
-    Logic test = new Logic();
-    Main testMain = new Main();
+    Analyzer test = new Analyzer();
 
 
     @Test
