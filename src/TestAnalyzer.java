@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class TestLogic {
+public class TestAnalyzer {
     Analyzer test = new Analyzer();
 
 
@@ -61,6 +61,11 @@ public class TestLogic {
     @Test
     public void testIfInputIsStop() {
         assertTrue(test.checkIfStop("stop"));
+    }
+
+    @Test
+    public void testInputStopMixedCase() {
+        assertTrue(test.checkIfStop("StOp"));
     }
 
     @Test

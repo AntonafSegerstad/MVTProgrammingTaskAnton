@@ -23,7 +23,6 @@ public class Main {
         }
 
         System.out.println();
-        process.printAll();
         System.out.println();
         System.out.println("Word counter: " + process.getWordCounter());
         System.out.println("Row counter: " + process.getRowCounter());

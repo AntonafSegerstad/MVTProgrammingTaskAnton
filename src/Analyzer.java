@@ -1,35 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Analyzer {
 
     private int rowCounter;
     private int charCounter;
-    private List<String> array = new ArrayList<>();
+    private int wordCounter;
+    private String longestWord = "";
 
 
     public void process(String input) {
 
         ifBlankInput(input);
 
-        String[] words = input.split(" ");
-        for (String word : words) {
-            array.add(word);
+        String[] array = input.split(" ");
+
+        for (String word : array) {
+            wordCounter++;
+            if (word.length() > longestWord.length()) {
+                longestWord = word;
+            }
         }
 
         rowCounter++;
         charCounter += input.length();
     }
 
-    public void printAll() {
-
-        for (int i = 0; i < array.size(); i++) {
-            System.out.print(array.get(i) + " ");
-        }
-    }
-
     public int getWordCounter() {
-        return array.size();
+        return wordCounter;
     }
 
     public int getRowCounter() {
@@ -41,22 +38,11 @@ public class Analyzer {
     }
 
     public String getLongestWord() {
-        String longestWord = "";
-
-        for (int i = 0; i < array.size(); i++) {
-
-            if (array.get(i).length() >= longestWord.length()) {
-                longestWord = array.get(i);
-            }
-        }
         return longestWord;
     }
 
     public boolean checkIfStop(String input) {
-        if (input.equalsIgnoreCase("stop")) {
-            return true;
-        }
-        return false;
+      return input.equalsIgnoreCase("stop");
     }
 
     public String ifBlankInput(String input) {
