@@ -1,12 +1,9 @@
-
-
 public class Analyzer {
 
     private int rowCounter;
     private int charCounter;
     private int wordCounter;
     private String longestWord = "";
-
 
     public void process(String input) {
 
@@ -20,7 +17,6 @@ public class Analyzer {
                 longestWord = word;
             }
         }
-
         rowCounter++;
         charCounter += input.length();
     }
@@ -42,7 +38,7 @@ public class Analyzer {
     }
 
     public boolean checkIfStop(String input) {
-      return input.equalsIgnoreCase("stop");
+        return input.equalsIgnoreCase("stop");
     }
 
     public String ifBlankInput(String input) {
