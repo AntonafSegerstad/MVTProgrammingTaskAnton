@@ -3,7 +3,16 @@ public class Analyzer {
     private int rowCounter;
     private int charCounter;
     private int wordCounter;
-    private String longestWord = "";
+    private String longestWord;
+
+
+    public Analyzer (){
+        longestWord = "";
+        rowCounter = 0;
+        charCounter = 0;
+        wordCounter = 0;
+    }
+
 
     public void process(String input) {
 
@@ -47,4 +56,6 @@ public class Analyzer {
         }
         return null;
     }
+
+
 }
